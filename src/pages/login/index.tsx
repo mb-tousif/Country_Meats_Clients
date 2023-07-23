@@ -3,18 +3,18 @@ import Link from "next/link";
 import RootLayout from "../../Layouts/RootLayout";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
+import { toast } from "react-toastify";
 
 const rootStyle:React.CSSProperties = {
-  backgroundColor: "#f0f2f5",
-  minHeight: "70vh",
-  padding: "2rem",
+  backgroundImage:"url(../../Assets/login.jpeg)",
+  minHeight:"70vh",
+  padding:"2rem",
 }
 
 const formStyle:React.CSSProperties ={
   boxSizing: "border-box",
   margin: "0 auto",
   borderRadius: "1rem",
-  backgroundColor: "hsl(0, 0%, 96%)",
   border: "4px solid hsl(0, 0%, 90%)",
   display: "grid",
   padding: "1rem",
@@ -34,6 +34,7 @@ export default function Login() {
 
   const onFinish = (values: any) => {
     console.log("Finish:", values);
+    toast.success("Login successful");
   };
 
   return (

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import logo from "../Assets/logo.png";
 
 const footerStyle: React.CSSProperties = {
     padding: '1rem',
@@ -9,7 +10,7 @@ const footerStyle: React.CSSProperties = {
 export default function Footer() {
   return (
     <div style={footerStyle}>
-        <Image src="/logo.png" alt="Country Meats" width={100} height={100} />
+        <Image src={logo} alt="Country Meats" width={100} height={100} />
         <p>Country Meats Ltd</p>
         <p>All right reserved & Copyright &#169; {new Date().getFullYear()}.</p>
     </div>
