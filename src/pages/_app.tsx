@@ -1,6 +1,13 @@
-import '../styles/globals.css'
+import { store } from "../Redux/store";
+import "../styles/globals.css";
+import { Provider } from "react-redux";
 
-export default function App({ Component, pageProps }: React.ComponentProps<any>) {
+export default function App({
+  Component,
+  pageProps,
+}: React.ComponentProps<any>) {
   const getLayout = Component.getLayout || ((page: any) => page);
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
+  );
 }
