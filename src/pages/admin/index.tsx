@@ -1,16 +1,13 @@
 import React from 'react'
 import DashboardLayout from '../../Layouts/DashboardLayout'
-import backG from '../../Assets/login.jpeg'
-const rootStyle:React.CSSProperties = {
-  background:`url(${backG})`,
-  minHeight:"70vh",
-  padding:"2rem",
-}
+import { Space, Typography } from 'antd'
 
 export default function Dashboard() {
   return (
     <DashboardLayout>
-      <div style={rootStyle}>Dashboard</div>
+      <Space direction="vertical">
+          <Typography.Title>Dashboard</Typography.Title>
+        </Space>
     </DashboardLayout>
   )
 }

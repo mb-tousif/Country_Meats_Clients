@@ -1,6 +1,7 @@
 import React from 'react'
 import RootLayout from '../Layouts/RootLayout'
 
+
 export default function Home() {
   return (
     <RootLayout>

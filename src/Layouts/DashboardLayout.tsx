@@ -7,10 +7,11 @@ import {
   UserOutlined,
   HomeOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
+import { MenuProps, Space, Typography } from "antd";
 import { Layout, Menu, theme } from "antd";
 import Link from "next/link";
 const { Content, Footer, Sider } = Layout;
+const { Text, Title } = Typography;
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -58,7 +59,7 @@ export default function DashboardLayout({
   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: "100vh", colorAdjust:"unset" }}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -77,10 +78,12 @@ export default function DashboardLayout({
           <div style={{ background: colorBgContainer }}>{children}</div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
-          <p>Country Meats Ltd</p>
-          <p>
+          <Space direction="vertical">
+          <Title level={3} style={{margin: 0}}>Country Meats Ltd</Title>
+          <Text>
             All right reserved & Copyright &#169; {new Date().getFullYear()}.
-          </p>
+          </Text>
+          </Space>
         </Footer>
       </Layout>
     </Layout>
